@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*/rerun/
+metaheuristics/*/rerun/
+*.aux
+*.log
