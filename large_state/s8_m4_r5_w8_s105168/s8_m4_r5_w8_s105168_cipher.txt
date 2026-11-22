@@ -1,0 +1,131 @@
+# Cipher description: large-state design s8_m4_r5_w8_s105168 (s = 8, m = 4, r = 5, w = 8), found by the genetic
+# algorithm. A single round repeated (period 1), written below as the base-4 cycle.
+# Model: byte-level truncated differences, first message difference anywhere in the first period.
+# Without linear incompatibility: open-end trail over 11 rounds 21, full collision 21 (shortest: 6 rounds)
+#   => exact 21.
+# With linear incompatibility: open-end trail over 11 rounds 22, full collision 22 (shortest: 4 rounds; no
+#   collision over 2 or 3 rounds) => exact 22.
+# Rounds below: the shortest collision without linear incompatibility.
+Design: s8_m4_r5_w8_s105168
+Parameters: s=8 m=4 r=5 w=8
+Rounds: 6
+
+LAYER 1: LINEAR
+----------------------------------------
+0 0 0 0 0 0 0 1
+0 0 1 0 0 0 0 0
+1 0 0 0 0 1 0 0
+0 0 1 0 1 0 0 0
+1 0 0 0 0 0 0 0
+0 1 0 0 0 0 0 1
+0 0 0 0 0 0 1 0
+1 0 0 1 0 0 0 0
+
+LAYER 2: NONLINEAR
+----------------------------------------
+Pattern: 1 1 1 1 1 1 1 1
+
+Transition matrix:
+1 0 0 0 0 0 0 0 0
+0 1 0 0 0 0 0 0 0
+0 0 1 0 0 0 0 0 0
+0 0 0 1 0 0 0 0 0
+0 0 0 0 0 0 1 0 0
+0 0 0 0 0 1 0 0 1
+0 1 0 0 0 1 0 0 0
+0 0 0 0 0 1 0 0 0
+1 0 0 0 0 0 0 0 0
+0 0 0 0 1 0 0 0 1
+0 0 0 0 0 1 0 0 1
+0 0 1 0 0 0 1 0 0
+0 0 0 0 0 0 0 1 0
+
+LAYER 3: LINEAR
+----------------------------------------
+0 0 0 0 0 0 0 1
+0 0 1 0 0 0 0 0
+1 0 0 0 0 1 0 0
+0 0 1 0 1 0 0 0
+1 0 0 0 0 0 0 0
+0 1 0 0 0 0 0 1
+0 0 0 0 0 0 1 0
+1 0 0 1 0 0 0 0
+
+LAYER 4: NONLINEAR
+----------------------------------------
+Pattern: 1 1 1 1 1 1 1 1
+
+Transition matrix:
+1 0 0 0 0 0 0 0 0
+0 1 0 0 0 0 0 0 0
+0 0 1 0 0 0 0 0 0
+0 0 0 1 0 0 0 0 0
+0 0 0 0 0 0 1 0 0
+0 0 0 0 0 1 0 0 1
+0 1 0 0 0 1 0 0 0
+0 0 0 0 0 1 0 0 0
+1 0 0 0 0 0 0 0 0
+0 0 0 0 1 0 0 0 1
+0 0 0 0 0 1 0 0 1
+0 0 1 0 0 0 1 0 0
+0 0 0 0 0 0 0 1 0
+
+LAYER 5: LINEAR
+----------------------------------------
+0 0 0 0 0 0 0 1
+0 0 1 0 0 0 0 0
+1 0 0 0 0 1 0 0
+0 0 1 0 1 0 0 0
+1 0 0 0 0 0 0 0
+0 1 0 0 0 0 0 1
+0 0 0 0 0 0 1 0
+1 0 0 1 0 0 0 0
+
+LAYER 6: NONLINEAR
+----------------------------------------
+Pattern: 1 1 1 1 1 1 1 1
+
+Transition matrix:
+1 0 0 0 0 0 0 0 0
+0 1 0 0 0 0 0 0 0
+0 0 1 0 0 0 0 0 0
+0 0 0 1 0 0 0 0 0
+0 0 0 0 0 0 1 0 0
+0 0 0 0 0 1 0 0 1
+0 1 0 0 0 1 0 0 0
+0 0 0 0 0 1 0 0 0
+1 0 0 0 0 0 0 0 0
+0 0 0 0 1 0 0 0 1
+0 0 0 0 0 1 0 0 1
+0 0 1 0 0 0 1 0 0
+0 0 0 0 0 0 0 1 0
+
+LAYER 7: LINEAR
+----------------------------------------
+0 0 0 0 0 0 0 1
+0 0 1 0 0 0 0 0
+1 0 0 0 0 1 0 0
+0 0 1 0 1 0 0 0
+1 0 0 0 0 0 0 0
+0 1 0 0 0 0 0 1
+0 0 0 0 0 0 1 0
+1 0 0 1 0 0 0 0
+
+LAYER 8: NONLINEAR
+----------------------------------------
+Pattern: 1 1 1 1 1 1 1 1
+
+Transition matrix:
+1 0 0 0 0 0 0 0 0
+0 1 0 0 0 0 0 0 0
+0 0 1 0 0 0 0 0 0
+0 0 0 1 0 0 0 0 0
+0 0 0 0 0 0 1 0 0
+0 0 0 0 0 1 0 0 1
+0 1 0 0 0 1 0 0 0
+0 0 0 0 0 1 0 0 0
+1 0 0 0 0 0 0 0 0
+0 0 0 0 1 0 0 0 1
+0 0 0 0 0 1 0 0 1
+0 0 1 0 0 0 1 0 0
+0 0 0 0 0 0 0 1 0
