@@ -50,8 +50,8 @@ kept. Options:
 | `--outdir DIR` | write the trails to `DIR` instead of `rerun/` |
 | `--no-pdf` | write `.txt` and `.tex` only |
 
-There is no time limit on any solve. The small designs (s5–s7) take minutes; the 20-round solves of the largest ones
-can take many hours.
+There is no time limit on any solve. Timed with `--threads 20` over the default N: under 30 minutes per solve for
+s5_m1_r3_w3 to s8_m2_r3_w4, s9_m3_r4_w7 and s12_m3_r6_w6, except the collision of s6_m2_r3_w5 (about 2 hours).
 
 ## Cipher description
 
@@ -95,17 +95,17 @@ open-end trail are both equal to the exact value (`designs.tsv`).
 
 | Design | s | m | r | w | Rate | Rounds per period | Exact value | N |
 |---|---|---|---|---|---|---|---|---|
-| s5_m1_r3_w3 | 5 | 1 | 3 | 3 | 3 | 1 round repeated | 31 | 20 |
-| s5_m1_r3_w3_mix | 5 | 1 | 3 | 3 | 3 | 4 different | 32 | 20 |
-| s6_m2_r3_w5 | 6 | 2 | 3 | 5 | 2.5 | 4 different | 23 | 20 |
-| s6_m2_r3_w6 | 6 | 2 | 3 | 6 | 3 | 4 different | 29 | 20 |
-| s7_m2_r3_w5 | 7 | 2 | 3 | 5 | 2.5 | 1 round repeated | 29 | 20 |
-| s7_m2_r3_w6 | 7 | 2 | 3 | 6 | 3 | 1 round repeated | 43 | 20 |
-| s8_m2_r3_w4 | 8 | 2 | 3 | 4 | 2 | 1 round repeated | 27 | 20 |
+| s5_m1_r3_w3 | 5 | 1 | 3 | 3 | 3 | 1 round repeated | 31 | 11 |
+| s5_m1_r3_w3_mix | 5 | 1 | 3 | 3 | 3 | 4 different | 32 | 18 |
+| s6_m2_r3_w5 | 6 | 2 | 3 | 5 | 2.5 | 4 different | 23 | 10 |
+| s6_m2_r3_w6 | 6 | 2 | 3 | 6 | 3 | 4 different | 29 | 11 |
+| s7_m2_r3_w5 | 7 | 2 | 3 | 5 | 2.5 | 1 round repeated | 29 | 9 |
+| s7_m2_r3_w6 | 7 | 2 | 3 | 6 | 3 | 1 round repeated | 43 | 12 |
+| s8_m2_r3_w4 | 8 | 2 | 3 | 4 | 2 | 1 round repeated | 27 | 14 |
 | s8_m2_r3_w5 | 8 | 2 | 3 | 5 | 2.5 | 1 round repeated | 39 | 11 |
 | s8_m2_r4_w6 | 8 | 2 | 4 | 6 | 3 | 1 round repeated | 51 | 11 |
 | s8_m3_r3_w8 | 8 | 3 | 3 | 8 | 2.67 | 1 round repeated | 29 | 11 |
-| s9_m3_r4_w7 | 9 | 3 | 4 | 7 | 2.33 | 1 round repeated | 29 | 20 |
+| s9_m3_r4_w7 | 9 | 3 | 4 | 7 | 2.33 | 1 round repeated | 29 | 11 |
 | s9_m3_r4_w9 | 9 | 3 | 4 | 9 | 3 | 1 round repeated | 45 | 11 |
 | s10_m3_r3_w6 | 10 | 3 | 3 | 6 | 2 | 1 round repeated | 25 | 11 |
-| s12_m3_r6_w6 | 12 | 3 | 6 | 6 | 2 | 1 round repeated | 30 | 20 |
+| s12_m3_r6_w6 | 12 | 3 | 6 | 6 | 2 | 1 round repeated | 30 | 12 |
