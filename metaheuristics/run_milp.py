@@ -90,11 +90,14 @@ def true_period(desc):
     return P
 
 
-def default_rounds(name):
+def default_rounds(name, lin=False):
+    """N from designs.tsv: column 3, or column 5 (N with linear incompatibility) for --lin when the file has it."""
     f = os.path.join(HERE, "designs.tsv")
     if os.path.exists(f):
         for line in open(f):
             t = line.rstrip("\n").split("\t")
+            if lin and t and t[0] == name and len(t) > 4 and t[4].isdigit():
+                return int(t[4])
             if t and t[0] == name and len(t) > 2 and t[2].isdigit():
                 return int(t[2])
     return 20
@@ -144,7 +147,7 @@ def main():
     tmpdir = os.path.join(outdir, "gurobi")
     os.makedirs(tmpdir, exist_ok=True)
     tag = "_lin" if a.lin else ""
-    N, pdf = a.rounds or default_rounds(name), not a.no_pdf
+    N, pdf = a.rounds or default_rounds(name, a.lin), not a.no_pdf
     print(f"{name}: s={desc['s']} m={desc['m']} r={desc['r']}, period {P}, "
           f"N = {N}; linear incompatibility {'on' if a.lin else 'off'}; trails to {outdir}", flush=True)
 

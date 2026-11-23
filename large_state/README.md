@@ -32,6 +32,7 @@ python run_milp.py <design> [--measure all|collision|open] [--rounds N] [--lin]
 For example, `python run_milp.py s8_m4_r5_w8_s105168` solves the full collision and the open-end trail over N = 11
 rounds without linear incompatibility (a minute); `--lin` adds the linear-incompatibility constraints (the open-end
 trail then takes about an hour with `--threads 32`). The value is exact when the two agree over the same N.
+Without `--rounds`, N comes from `designs.tsv`: `N_open_equals_collision`, or `N_lin` with `--lin`.
 
 ## Values
 
@@ -51,3 +52,22 @@ Trails in `s8_m4_r5_w8_s105168/`:
 - without linear incompatibility: collisions over 4, 5 (22 each), 6 and 20 rounds (21 each); open-end trail over
   11 rounds (21);
 - with linear incompatibility: collisions over 4 to 13 rounds (22 each); open-end trail over 11 rounds (22).
+
+### s8_m4_r5_w8_s101423 (s = 8, m = 4, r = 5, w = 8; one round repeated)
+
+| Linear incompatibility | Open-end trail (lower bound) | Full collision (upper bound) | Exact | Shortest collision |
+|---|---|---|---|---|
+| off | 19 (11 rounds) | 19 (5 rounds; also over 6 and 11 rounds) | **19** | 5 rounds |
+| on | 26 (20 rounds; 20 over 11 rounds) | 26 (6 rounds; 26 at every length from 6 to 9; 31 over 5, 33 over 4, 56 over 3, none over 2) | **26** | 6 rounds |
+
+With linear incompatibility, the collision over 6 rounds followed by rounds without difference is a collision over
+20 rounds, so the collision and the open-end trail over 20 rounds are both 26. The open-end trail over 11 rounds (20)
+is too short to show it, so N = 20 here. That open-end solve took about 17 hours with 48 threads; the run without
+linear incompatibility takes a few minutes.
+
+Trails in `s8_m4_r5_w8_s101423/`:
+
+- without linear incompatibility: collisions over 3 (48), 4 (22), 5 and 6 rounds (19 each); open-end trail over 11
+  rounds (19);
+- with linear incompatibility: collisions over 3 (56), 4 (33), 5 (31) and 6 to 9 rounds (26 each); open-end trails
+  over 11 (20) and 20 rounds (26).
